@@ -7,6 +7,13 @@ class MyComponent extends React.Component {
     state = {
         name: 'Quang',
         age: 22
+    };
+    handleClick(event) {
+        // console.log('Click me ')
+        console.log('My name is')
+    }
+    handleOnMoverOver(event) {
+        console.log(event.pageX)
     }
     //state dùng để ghi các thuộc tính của component và có thể thay đổi dễ dàng
     // muốn in ra các phần tử trong state phải bỏ trong {} và keyword this để ánh xạ
@@ -16,6 +23,8 @@ class MyComponent extends React.Component {
             <div>
                 My name is {this.state.name} and
                 I'm {this.state.age} years old
+                <button onMouseOver={this.handleOnMoverOver}>Hover Me</button>
+                <button onClick={this.handleClick}>Click me </button>
             </div>
 
         );
