@@ -2,14 +2,11 @@
 // function component
 
 import React from "react"
+import UserInfor from "./UserInfor";
 
 class MyComponent extends React.Component {
-    state = {
-        name: 'Quang',
-        age: 22
-    };
-    handleClick(event) {
-        // console.log('Click me ')
+
+    handleClick(event) {    //click chuột
         // console.log('My name is', this.state.name)
         // console.log('random', Math.floor(Math.random() * 100) + 1);
         console.log('I am', this.state.age, 'years old');
@@ -19,20 +16,20 @@ class MyComponent extends React.Component {
             age: Math.floor((Math.random() * 100) + 1)
         })
     }
-    handleOnMoverOver(event) {
+    handleOnMoverOver(event) {  ///hower chuột
         console.log(event.pageX)
     }
     //state dùng để ghi các thuộc tính của component và có thể thay đổi dễ dàng
     // muốn in ra các phần tử trong state phải bỏ trong {} và keyword this để ánh xạ
+
+
+
+
     //JSX
     render() {
         return (
             <div>
-                My name is {this.state.name} and
-                I'm {this.state.age} years old
-                <button onMouseOver={this.handleOnMoverOver}>Hover Me</button>
-                <button onClick={(event) => { this.handleClick(event) }}>Click me </button>
-
+                <UserInfor></UserInfor>
             </div>
 
         );
