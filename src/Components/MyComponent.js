@@ -23,26 +23,35 @@ class MyComponent extends React.Component {
     //state dùng để ghi các thuộc tính của component và có thể thay đổi dễ dàng
     // muốn in ra các phần tử trong state phải bỏ trong {} và keyword this để ánh xạ
 
+    state = {
+        listUsers: [
+            { id: 1, name: "Quang", age: 22 },
+            { id: 2, name: "Trang", age: 25 },
+            { id: 3, name: "Gnar+", age: 24 }
 
+        ]
+
+    }
 
 
     //JSX
     render() {
-        const myAge = 25;
-        const myInfor = ['ab', 'c', 'c']
+
+        //DRY: don't repeat yourself
         return (
 
             <div>
                 <UserInfor></UserInfor>
                 <br></br>
 
-                <DisplayInfor name="Quang" age="22">
+                <DisplayInfor
+                    listUsers={this.state.listUsers} //lấy thông tin trong state
+
+                >
 
                 </DisplayInfor>
-                <hr></hr>
-                <DisplayInfor name="Trang" age={25} myInfor={myInfor}>
 
-                </DisplayInfor>
+
             </div>
 
         );
