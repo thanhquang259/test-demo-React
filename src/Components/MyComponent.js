@@ -3,6 +3,7 @@
 
 import React from "react"
 import UserInfor from "./UserInfor";
+import DisplayInfor from "./DisplayInfor";
 
 class MyComponent extends React.Component {
 
@@ -27,9 +28,21 @@ class MyComponent extends React.Component {
 
     //JSX
     render() {
+        const myAge = 25;
+        const myInfor = ['ab', 'c', 'c']
         return (
+
             <div>
                 <UserInfor></UserInfor>
+                <br></br>
+
+                <DisplayInfor name="Quang" age="22">
+
+                </DisplayInfor>
+                <hr></hr>
+                <DisplayInfor name="Trang" age={25} myInfor={myInfor}>
+
+                </DisplayInfor>
             </div>
 
         );
