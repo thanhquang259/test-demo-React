@@ -2,26 +2,26 @@
 // function component
 
 import React from "react"
-import UserInfor from "./UserInfor";
+import AddUserInfor from "./AddUserInfor";
 import DisplayInfor from "./DisplayInfor";
 
 class MyComponent extends React.Component {
 
-    handleClick(event) {    //click chuột
-        // console.log('My name is', this.state.name)
-        // console.log('random', Math.floor(Math.random() * 100) + 1);
-        console.log('I am', this.state.age, 'years old');
+    // handleClick(event) {    //click chuột
+    //     // console.log('My name is', this.state.name)
+    //     // console.log('random', Math.floor(Math.random() * 100) + 1);
+    //     console.log('I am', this.state.age, 'years old');
 
-        this.setState({
-            name: 'Trang',
-            age: Math.floor((Math.random() * 100) + 1)
-        })
-    }
-    handleOnMoverOver(event) {  ///hower chuột
-        console.log(event.pageX)
-    }
-    //state dùng để ghi các thuộc tính của component và có thể thay đổi dễ dàng
-    // muốn in ra các phần tử trong state phải bỏ trong {} và keyword this để ánh xạ
+    //     this.setState({
+    //         name: 'Trang',
+    //         age: Math.floor((Math.random() * 100) + 1)
+    //     })
+    // }
+    // handleOnMoverOver(event) {  ///hower chuột
+    //     console.log(event.pageX)
+    // }
+    // //state dùng để ghi các thuộc tính của component và có thể thay đổi dễ dàng
+    // // muốn in ra các phần tử trong state phải bỏ trong {} và keyword this để ánh xạ
 
     state = {
         listUsers: [
@@ -32,6 +32,12 @@ class MyComponent extends React.Component {
         ]
 
     }
+    handleAddUser = (userObj) => {
+        console.log(">>> check data form parent: ", userObj)
+        this.setState({
+            listUsers: [userObj, ...this.state.listUsers] //thêm phần tử userObj vào đầu mảng
+        })
+    }
 
 
     //JSX
@@ -41,7 +47,10 @@ class MyComponent extends React.Component {
         return (
 
             <div>
-                <UserInfor></UserInfor>
+                <AddUserInfor
+                    handleAddUser={this.handleAddUser} // nếu ở đây có dấu this.handleAddUser() thì là lấy giá trị
+                // tại điểm này còn không thì lấy từ cha 
+                ></AddUserInfor>
                 <br></br>
 
                 <DisplayInfor
