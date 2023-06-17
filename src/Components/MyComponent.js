@@ -44,8 +44,12 @@ class MyComponent extends React.Component {
     render() {
 
         //DRY: don't repeat yourself
+
+        const test = { name: 'Nguyen Thanh Quang', age: 22 }
         return (
             <>
+
+                {console.log('check test:', test)}
                 <div className="a">
                     <AddUserInfor
                         handleAddUser={this.handleAddUser} // nếu ở đây có dấu this.handleAddUser() thì là lấy giá trị
