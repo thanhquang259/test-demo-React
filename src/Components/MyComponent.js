@@ -45,24 +45,27 @@ class MyComponent extends React.Component {
 
         //DRY: don't repeat yourself
         return (
+            <>
+                <div className="a">
+                    <AddUserInfor
+                        handleAddUser={this.handleAddUser} // nếu ở đây có dấu this.handleAddUser() thì là lấy giá trị
+                    // tại điểm này còn không thì lấy từ cha 
+                    ></AddUserInfor>
+                    <br></br>
 
-            <div>
-                <AddUserInfor
-                    handleAddUser={this.handleAddUser} // nếu ở đây có dấu this.handleAddUser() thì là lấy giá trị
-                // tại điểm này còn không thì lấy từ cha 
-                ></AddUserInfor>
-                <br></br>
+                    <DisplayInfor
+                        listUsers={this.state.listUsers} //lấy thông tin trong state
 
-                <DisplayInfor
-                    listUsers={this.state.listUsers} //lấy thông tin trong state
+                    >
 
-                >
-
-                </DisplayInfor>
+                    </DisplayInfor>
 
 
-            </div>
+                </div>
+                <div className="b">
 
+                </div>
+            </>
         );
     }
 }
