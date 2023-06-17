@@ -38,6 +38,13 @@ class MyComponent extends React.Component {
             listUsers: [userObj, ...this.state.listUsers] //thêm phần tử userObj vào đầu mảng
         })
     }
+    handleDeleteUser = (userId) => {
+        let listUsersClone = [...this.state.listUsers]
+        listUsersClone = listUsersClone.filter(item => item.id !== userId);
+        this.setState({
+            listUsers: listUsersClone
+        })
+    }
 
 
     //JSX
@@ -50,6 +57,7 @@ class MyComponent extends React.Component {
             <>
 
                 {console.log('check test:', test)}
+
                 <div className="a">
                     <AddUserInfor
                         handleAddUser={this.handleAddUser} // nếu ở đây có dấu this.handleAddUser() thì là lấy giá trị
@@ -59,7 +67,7 @@ class MyComponent extends React.Component {
 
                     <DisplayInfor
                         listUsers={this.state.listUsers} //lấy thông tin trong state
-
+                        handleDeleteUser={this.handleDeleteUser}
                     >
 
                     </DisplayInfor>
