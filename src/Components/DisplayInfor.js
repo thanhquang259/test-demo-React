@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './DisplayInfor.scss';
 import logo from './../logo.svg';
 // class DisplayInfor extends React.Component {
@@ -87,6 +87,16 @@ const DisplayInfor = (props) => {
     const handleShowHideListUser = () => {
         setShowHideListUser(!isShowHideListUser);
     }
+    useEffect(
+        () => {
+            setTimeout(() => {
+                document.title = "Huyen Trangg"
+            }, 100)
+            if (listUsers.length === 0)
+                alert("Bạn đã xóa hết users")
+        }, [listUsers]
+    );
+
     return (
         <div className="DisplayInfor">
             <div>
