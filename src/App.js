@@ -1,11 +1,12 @@
 import './App.scss';
+import Header from './Components/Header/Header';
 
 const App = () => {
 
   return (
 
     <div className="app-container">
-      Hello word
+      <Header />
 
     </div>
   );
