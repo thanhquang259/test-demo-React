@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 const Header = () => {
     return (
         <Navbar bg="light" expand="lg">
@@ -12,9 +12,9 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <link></link>
-                        <Link to="/" className='nav-link'>Home</Link>
-                        <Link to="/user" className='nav-link'>User</Link>
-                        <Link to="/admin" className='nav-link'>Admin</Link>
+                        <NavLink to="/" className='nav-link'>Home</NavLink>
+                        <NavLink to="/user" className='nav-link'>User</NavLink>
+                        <NavLink to="/admin" className='nav-link'>Admin</NavLink>
 
                     </Nav>
                     <Nav>
