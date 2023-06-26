@@ -15,8 +15,37 @@ body {
 }
 .app-container{
   .header-container{
-    .navbar-nav{
+    .btn-login{
+      display: inline-block;
+        cursor: pointer;
+        font-family: inherit;
+        -webkit-box-pack: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        color: rgb(26, 26, 25);
+        transition: background-color 0.2s ease-out 0s, border-color, color, opacity;
+        padding: 8px 16px;
+        border-radius: 10px;
+        background: transparent;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(26, 26, 25);
+        border-image: initial;
+        padding: 0 15px;
+        height: 40px;
+        &:hover{
+          background: blue;
+        }
+        
+    }
+    .navbar{
       z-index: 10;
+      padding-top: 20px;
+      // opacity: 0.5; làm mờ
+      background-color: rgba(0,0,0,0) !important;
       
 
       .nav-link{
@@ -26,20 +55,70 @@ body {
     } 
       }
   }
+  .homepage-container{
+    .homepage-content{
+      padding: 100px;
+      width: 50%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .title-1 {
+      font-size: 80px;
+      letter-spacing: -0.02em;
+      line-height: 100%;
+    }
+    .title-2 {
+      font-size: 24px;
+      letter-spacing: normal;
+      line-height: 133%;
+    }
+    .title-3{
+      button{
+        border-radius: 12px;
+      height: 40px;
+      background: rgb(26, 26, 25);
+      color: rgb(255, 255, 255);
+      }
+     
+    }
+  }
 }
 
 video {
   position: fixed;
   bottom: 0;
-  width: 100vw;
+  width: 125vw;
 }
 
-.navbar-nav{
-  background-color: rgb(255,255,255);
-  
-}
-.navbar{
-  z-index: 10;
-  opacity: 0.5;
-}
-  
+
+
+
+button.btn-signup{
+  height: 40px;
+  display: inline-block;
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.2s ease-out 0s, border-color, color, opacity;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: rgb(26, 26, 25);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(26, 26, 25);
+  border-image: initial;
+  margin-left: 15px;
+  padding: 0 15px;
+  &:hover{
+    background: red;
+  }
+} 
+
