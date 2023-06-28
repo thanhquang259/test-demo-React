@@ -7,10 +7,16 @@ import {
     SidebarHeader,
     SidebarFooter,
     SidebarContent,
+
 } from 'react-pro-sidebar';
 
 import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
 import sidebarBg from '../../assets/bg2.jpg';
+import { Link } from 'react-router-dom';
+import { DiReact } from "react-icons/di";
+import { MdDashboard } from "react-icons/md";
+import { AiFillGithub } from "react-icons/ai";
+import './SideBar.scss';
 
 
 const SideBar = (props) => {
@@ -37,28 +43,32 @@ const SideBar = (props) => {
                             whiteSpace: 'nowrap',
                         }}
                     >
-                        Hoi Dan IT
+                        <AiFillGithub size={'3em'} color={"pink"} />
+                        <span >Huyen Trangg Website</span>
                     </div>
                 </SidebarHeader>
 
                 <SidebarContent>
                     <Menu iconShape="circle">
                         <MenuItem
-                            icon={<FaTachometerAlt />}
-                            suffix={<span className="badge red">New</span>}
+                            icon={<MdDashboard />}
+                            suffix={<span className="badge red">Main</span>}
                         >
-                            dashboard
+                            Dashboard
+                            <Link to="/admin" />
                         </MenuItem>
-                        <MenuItem icon={<FaGem />}> components </MenuItem>
                     </Menu>
                     <Menu iconShape="circle">
                         <SubMenu
-                            suffix={<span className="badge yellow">3</span>}
-                            icon={<FaRegLaughWink />}
+                            icon={<FaGem />}
+                            title="Features"
                         >
-                            <MenuItem> 1</MenuItem>
-                            <MenuItem> 2</MenuItem>
-                            <MenuItem> 3</MenuItem>
+                            <MenuItem>
+                                Quản lý Users
+                                <Link to="/admin/manage-user" />
+                            </MenuItem>
+                            <MenuItem > Quản lý Bài Quiz</MenuItem>
+                            <MenuItem> Quản lý Câu Hỏi</MenuItem>
                         </SubMenu>
 
                     </Menu>
@@ -72,14 +82,13 @@ const SideBar = (props) => {
                         }}
                     >
                         <a
-                            href="https://github.com/azouaoui-med/react-pro-sidebar"
+                            href="https://www.facebook.com/hitranggg"
                             target="_blank"
                             className="sidebar-btn"
                             rel="noopener noreferrer"
                         >
-                            <FaGithub />
                             <span style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-                                viewSource
+                                &#169; Huyen Trangg
                             </span>
                         </a>
                     </div>

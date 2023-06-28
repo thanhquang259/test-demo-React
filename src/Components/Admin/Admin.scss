@@ -4,5 +4,19 @@
         .pro-sidebar {
             height: 100vh !important;
             }
+        
     }
+    .admin-content {
+        width: 100%;
+        .admin-header{
+            height: 40px;
+            border: 1px solid green;
+            border-radius: 5px;
+        }
+        .admin-main{
+            border: 1px solid pink;
+            border-radius: 5px;
+        }
+    }
+  
 }
