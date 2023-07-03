@@ -2,9 +2,11 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { FcPlus } from 'react-icons/fc';
-import axios from 'axios';
+import { toast } from 'react-toastify';
+import { postCreateNewUser } from '../../../services/apiService';
 const ModalCreateUser = (props) => {
     const { show, setShow } = props;
+
 
     const handleClose = () => {
         setShow(false)
@@ -14,6 +16,7 @@ const ModalCreateUser = (props) => {
         setRole('USER');
         setimage("");
     };
+
     const handleShow = () => setShow(true);
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
@@ -31,22 +34,77 @@ const ModalCreateUser = (props) => {
 
 
     }
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    };
     const handleSubmitCreateUser = async () => {
-        const form = new FormData();
-        form.append('email', email);
-        form.append('password', password);
-        form.append('username', username);
-        form.append('role', role);
-        form.append('userImage', image);
+        const isValidEmail = validateEmail(email);
+        if (!isValidEmail) {
+            toast.error(' Không phải địa chỉ email', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            return;
+        }
+        if (!password) {
+            toast.error('Chưa nhập password', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            return;
+        }
+        let data = await postCreateNewUser(email, password, username, role, image);
 
-        let res = await axios.post('http://localhost:8081/api/v1/participant', form)
-        console.log(res)
+
+        console.log(data)
+        if (data && data.EC === 0) {
+            toast.success(' Add Success', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            handleClose();
+        }
+        if (data && data.EC !== 0) {
+            toast.error(' Add Error', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+
     }
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            {/* <Button variant="primary" onClick={handleShow}>
                 Add new user
-            </Button>
+            </Button> */}
 
             <Modal show={show} onHide={handleClose} size="xl" backdrop="static"
                 className='modal-add-user'>
