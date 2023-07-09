@@ -1,18 +1,7 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { getAllUsers } from "../../../services/apiService";
+
 const TableUser = (props) => {
-    const [listUsers, setlistUsers] = useState([])
-    useEffect(() => {
-        fetchListUsers();
-    }, []);
-    const fetchListUsers = async () => {
-        let res = await getAllUsers();
-        console.log(res)
-        if (res.EC === 0) {
-            setlistUsers(res.DT)
-        }
-    }
+    const { listUsers } = props;
+
 
     return (
         <>
@@ -30,15 +19,27 @@ const TableUser = (props) => {
                     {listUsers && listUsers.length > 0 &&
                         listUsers.map((item, index) => {
                             return (
-                                <tr key={'table-users-${index}'}>
-                                    <th scope="row">{index + 1}</th>
+                                <tr key={`table-users-${index}`}>
+                                    <td>{item.id}</td>
                                     <td>{item.username}</td>
                                     <td>{item.email}</td>
                                     <td>{item.role}</td>
                                     <td>
-                                        <button className="btn btn-warning">View</button>
-                                        <button className="btn btn-success mx-3">Update</button>
-                                        <button className="btn btn-info">Delete</button>
+                                        <button
+                                            className="btn btn-warning"
+                                            onClick={() => props.handleClickView(item)}
+                                        >View
+                                        </button>
+                                        <button
+                                            className="btn btn-success mx-3"
+                                            onClick={() => props.handleClickUpdate(item)}
+                                        >Update
+                                        </button>
+                                        <button
+                                            className="btn btn-info"
+                                            onClick={() => props.handleClickDelete(item)}
+                                        >Delete
+                                        </button>
                                     </td>
                                 </tr>
                             )
