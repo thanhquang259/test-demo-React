@@ -13,7 +13,7 @@ const ModalViewUser = (props) => {
     return (
         <>
             <Modal show={show} onHide={handleClose} size="xl" backdrop="static"
-                className='modal-add-user'>
+                className='modal-view-user'>
                 <Modal.Header closeButton>
                     <Modal.Title>View user</Modal.Title>
                 </Modal.Header>

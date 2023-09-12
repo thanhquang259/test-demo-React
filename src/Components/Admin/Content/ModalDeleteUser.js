@@ -23,7 +23,8 @@ const ModalDeleteUser = (props) => {
 
             });
             handleClose();
-            await props.fetchListUsers();
+            props.setCurrentPage(1);
+            await props.fetchListUserswithPaginate(1);
         }
         if (data && data.EC !== 0) {
             toast.error(' Delete Error', {

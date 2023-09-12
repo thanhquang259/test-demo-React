@@ -82,7 +82,8 @@ const ModalUpdateUser = (props) => {
 
             });
             handleClose();
-            await props.fetchListUsers();
+            props.setCurrentPage(props.currentPage);
+            await props.fetchListUserswithPaginate(props.currentPage);
         }
         if (data && data.EC !== 0) {
             toast.error(' Add Error', {

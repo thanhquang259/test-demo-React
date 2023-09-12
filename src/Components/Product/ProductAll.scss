@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    .anh-san-pham{
+        padding-left: 25px;
+        transition: all 0.3s;
+    }
+    .anh-san-pham:hover{
+        transform: scale(1.15);
+    }
+        .noi-dung-san-pham{
+            display: flex;
+           .san-pham{
+            display: flex;
+                text-align: left;
+                padding-top: 10px;
+                font-size: 25px;
+                font-weight: 500;
+                padding-left: 20px;
+                align-items: center;
+                width: 80%;
+            }
+            .khu-vuc-gia{
+                display: flex;
+                text-align: right;
+                padding-bottom: 8px;
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 30px;
+                align-items: center;
+            }
+            .gia-giam{
+                display: flex;
+                text-align: right;
+                padding-bottom: 8px;
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 30px;
+               
+            }
+        }
+}
+
+
+
+

@@ -51,6 +51,9 @@ body {
       .nav-link{
         &.active{
           color: pink;
+        &:hover{
+          background-color: lightgreen;
+        }
       }
     } 
       }
@@ -65,14 +68,16 @@ body {
       gap: 30px;
     }
     .title-1 {
-      font-size: 80px;
+      font-size: 100px;
       letter-spacing: -0.02em;
       line-height: 100%;
+      font-weight: bold;
+      
     }
     .title-2 {
       font-size: 24px;
-      letter-spacing: normal;
-      line-height: 133%;
+      letter-spacing: -0.02em;
+      line-height: 100%;
     }
     .title-3{
       button{
@@ -81,20 +86,49 @@ body {
       background: rgb(26, 26, 25);
       color: rgb(255, 255, 255);
       }
-     
-    }
+     }
+     .title-4{
+      font-size: 60px;
+      letter-spacing: -0.02em;
+      line-height: 100%;
+     }
   }
 }
 
 video {
   position: fixed;
   bottom: 0;
-  width: 125vw;
+  width: 50%;
+  height: 100%;
+  margin-left: 700px;
 }
-
-
-
-
+button.btn-login{
+  height: 40px;
+  display: inline-block;
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.2s ease-out 0s, border-color, color, opacity;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: rgb(26, 26, 25);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(26, 26, 25);
+  border-image: initial;
+  margin-left: 15px;
+  padding: 0 15px;
+  width: 135px;
+  &:hover{
+    background: red;
+  }
+}
 button.btn-signup{
   height: 40px;
   display: inline-block;
@@ -117,6 +151,7 @@ button.btn-signup{
   border-image: initial;
   margin-left: 15px;
   padding: 0 15px;
+  width: 135px;
   &:hover{
     background: red;
   }

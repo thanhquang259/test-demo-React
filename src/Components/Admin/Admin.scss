@@ -14,8 +14,11 @@
             border-radius: 5px;
         }
         .admin-main{
-            
             border-radius: 5px;
+            .phan_trang{
+                display: flex;
+                justify-content: center;
+            }
         }
     }
   

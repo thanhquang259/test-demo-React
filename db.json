@@ -1,0 +1,41 @@
+{
+  "cart": [
+    {
+      "id": 1,
+      "name": "NS TEE GREY",
+      "price": "380.000đ"
+    },
+    {
+      "id": "2",
+      "name": "NS TEE YELLOW",
+      "price": "375.000đ"
+    },
+    {
+      "id": "3",
+      "name": "NS TEE BLACK",
+      "price": "375.000đ"
+    },
+    {
+      "id": "4",
+      "name": "NS TEE GREEN",
+      "price": "375.000đ"
+    },
+    {
+      "id": "5",
+      "name": "NS TEE GREEN",
+      "price": "375.000đ"
+    },
+    {
+      "id": "6",
+      "name": "NS TEE GREEN",
+      "price": "375.000đ"
+    },
+    {
+      "id": "7",
+      "name": "NS TEE GREEN",
+      "price": "375.000đ",
+      "img": "https://i.pinimg.com/564x/30/b5/49/30b54999b098050158ed13a1ecdcaab0.jpg",
+      "json-server --watch db.json"
+    }
+  ]
+}

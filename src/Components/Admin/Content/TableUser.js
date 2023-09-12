@@ -8,7 +8,7 @@ const TableUser = (props) => {
             <table className="table table-hover table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">NO</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Username</th>
                         <th scope="col">Email</th>
                         <th scope="col">Role</th>
